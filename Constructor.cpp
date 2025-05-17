@@ -59,4 +59,7 @@ public:
     {
         cout << "Nama: " << nama << ", ID: " << id << ", Total Dipinjam: " << totalDipinjam << endl;
     }
+
+    friend class petugas;
+    friend void lihatStatusPeminjam(const Peminjam& p);
 };
