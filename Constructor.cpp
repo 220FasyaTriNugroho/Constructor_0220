@@ -104,4 +104,18 @@ public:
             cout << "Petugas: Buku sedang dipinjam." << endl;
         }
     }
+
+    void prosesPengembalian(Buku& b, Peminjam& p)
+    {
+        if (b.statusDipinjam)
+        {
+            b.statusDipinjam = false;
+            p.totalDipinjam--;
+            cout << "Petugas: Buku berhasil dikembalikan." << endl;
+        }
+        else
+        {
+            cout << "Petugas: Buku sedang tidak dipinjam." << endl;
+        } 
+    }
 };
