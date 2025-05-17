@@ -29,4 +29,7 @@ public:
         cout << "Judul: " << judul << ", Penulis: " << penulis << ", Status: ";
         cout << (statusDipinjam ? "Dipinjam" : "Tersedia") << endl;
     }
+
+    friend class Petugas;
+    friend void lihatStatusBuku(const Buku& b);
 };
