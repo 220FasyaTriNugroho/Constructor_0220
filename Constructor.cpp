@@ -17,4 +17,10 @@ public:
         judul = j;
         return *this;
     }
+
+    Buku& setPenulis(const string& p)
+    {
+        penulis = p;
+        return *this;
+    }
 };
