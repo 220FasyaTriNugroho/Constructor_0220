@@ -48,4 +48,10 @@ public:
         nama = n;
         return *this;
     }
+
+    Peminjam& setId(int i)
+    {
+        id = i;
+        return *this;
+    }
 };
