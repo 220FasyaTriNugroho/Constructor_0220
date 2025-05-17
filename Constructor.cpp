@@ -69,4 +69,9 @@ private:
     string nama;
     int id;
     string levelAkses;
+
+public:
+    Petugas(string n = "", int = 0, string level = "") : nama(n), id(i), levelAkses(level) {}
+    
+    
 };
