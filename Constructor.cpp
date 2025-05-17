@@ -54,4 +54,9 @@ public:
         id = i;
         return *this;
     }
+
+    void tampilkanInfo() const
+    {
+        cout << "Nama: " << nama << ", ID: " << id << ", Total Dipinjam: " << totalDipinjam << endl;
+    }
 };
