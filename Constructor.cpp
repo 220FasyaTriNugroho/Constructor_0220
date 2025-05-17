@@ -10,4 +10,11 @@ private:
 
 public:
     Buku(string j = "", string p = "") : judul(j), penulis(p), statusDipinjam(false) {}
+
+    // method setter chain function
+    Buku* setJudul(const string& j) 
+    {
+        judul = j;
+        return *this;
+    }
 };
