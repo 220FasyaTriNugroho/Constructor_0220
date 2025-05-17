@@ -73,5 +73,15 @@ private:
 public:
     Petugas(string n = "", int = 0, string level = "") : nama(n), id(i), levelAkses(level) {}
     
-    
+    Petugas& setNama(const string& n)
+    {
+        nama = n;
+        return *this;
+    }
+
+    Petugas& setId(int i)
+    {
+        id = i;
+        return *this;
+    }
 };
