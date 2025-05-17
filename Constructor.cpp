@@ -33,3 +33,10 @@ public:
     friend class Petugas;
     friend void lihatStatusBuku(const Buku& b);
 };
+
+class Peminjam {
+private:
+    string nama;
+    int id;
+    int totalDipinjam;
+};
