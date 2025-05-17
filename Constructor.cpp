@@ -118,4 +118,6 @@ public:
             cout << "Petugas: Buku sedang tidak dipinjam." << endl;
         } 
     }
+
+    friend class Admin;
 };
