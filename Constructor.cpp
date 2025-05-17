@@ -90,4 +90,18 @@ public:
         levelAkses = level;
         return *this;
     }
+
+    void prosesPeminjaman(Buku& b, Peminjam& p)
+    {
+        if (!b.statusDipinjam)
+        {
+            b.statusDipinjam = true;
+            p.totalDipinjam++;
+            cout << "Petugas: Buku berhasil di pinjam." << endl;
+        }
+        else
+        {
+            cout << "Petugas: Buku sedang dipinjam." << endl;
+        }
+    }
 };
