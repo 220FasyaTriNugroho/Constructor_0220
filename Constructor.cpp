@@ -146,3 +146,34 @@ void lihatStatusBuku(const Buku& b){
 void lihatStatusPeminjam(const Peminjam& p){
     cout << "Admin: Total Buku Dipinjam oleh Peminjam: " << p.totalDipinjam << endl;
 }
+
+int main(){
+    Buku buku1;
+    buku1.setJudul("Mateatika")->setPenulis("Haris Setiawan");
+
+    Peminjam siswa1;
+    siswa1.setNama("Fasya").setId(0220);
+
+    Petugas petugas1;
+    petugas1.setNama("Gibran").setId(10).setLevelAkses("Biasa");
+
+    Admin admin;
+
+    cout << "===Sebelum Peminjaman===" << endl;
+    buku1.tampilkanInfo();
+    siswa1.tampilkanInfo();
+
+    petugas1.prosesPeminjaman(buku1, siswa1);
+
+    cout << "\n===Setelah Peminjaman===" << endl;
+    buku1.tampilkanInfo();
+    siswa1.tampilkanInfo();
+
+    admin.lihatStatistik(buku1, siswa1);
+
+    cout << "\n===Setelah Pengembalian===" << endl;
+    buku1.tampilkanInfo();
+    siswa1.tampilkanInfo();
+
+    admin.ubahLevelAkses(petugas1, "Koordinator");
+}
