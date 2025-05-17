@@ -84,4 +84,10 @@ public:
         id = i;
         return *this;
     }
+
+    Petugas& setLevelAkses(const string& level)
+    {
+        levelAkses = level;
+        return *this;
+    }
 };
