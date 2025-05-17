@@ -12,7 +12,7 @@ public:
     Buku(string j = "", string p = "") : judul(j), penulis(p), statusDipinjam(false) {}
 
     // method setter chain function
-    Buku* setJudul(const string& j) 
+    Buku& setJudul(const string& j) 
     {
         judul = j;
         return *this;
@@ -60,7 +60,7 @@ public:
         cout << "Nama: " << nama << ", ID: " << id << ", Total Dipinjam: " << totalDipinjam << endl;
     }
 
-    friend class petugas;
+    friend class Petugas;
     friend void lihatStatusPeminjam(const Peminjam& p);
 };
 
@@ -71,7 +71,7 @@ private:
     string levelAkses;
 
 public:
-    Petugas(string n = "", int = 0, string level = "") : nama(n), id(i), levelAkses(level) {}
+    Petugas(string n = "", int i = 0, string level = "") : nama(n), id(i), levelAkses(level) {}
     
     Petugas& setNama(const string& n)
     {
@@ -147,33 +147,33 @@ void lihatStatusPeminjam(const Peminjam& p){
     cout << "Admin: Total Buku Dipinjam oleh Peminjam: " << p.totalDipinjam << endl;
 }
 
-int main(){
-    Buku buku1;
-    buku1.setJudul("Mateatika")->setPenulis("Haris Setiawan");
+int main() {
+    Buku* buku1 = new Buku();
+    buku1->setJudul("Matematika").setPenulis("Haris Setiawan");
 
-    Peminjam siswa1;
-    siswa1.setNama("Fasya").setId(0220);
+    Peminjam* siswa1 = new Peminjam();
+    siswa1->setNama("Fasya").setId(220);
 
-    Petugas petugas1;
-    petugas1.setNama("Gibran").setId(10).setLevelAkses("Biasa");
+    Petugas* petugas1 = new Petugas();
+    petugas1->setNama("Gibran").setId(10).setLevelAkses("Biasa");
 
     Admin admin;
 
     cout << "===Sebelum Peminjaman===" << endl;
-    buku1.tampilkanInfo();
-    siswa1.tampilkanInfo();
+    buku1->tampilkanInfo();
+    siswa1->tampilkanInfo();
 
-    petugas1.prosesPeminjaman(buku1, siswa1);
+    petugas1->prosesPeminjaman(*buku1, *siswa1);
 
     cout << "\n===Setelah Peminjaman===" << endl;
-    buku1.tampilkanInfo();
-    siswa1.tampilkanInfo();
+    buku1->tampilkanInfo();
+    siswa1->tampilkanInfo();
 
-    admin.lihatStatistik(buku1, siswa1);
+    admin.lihatStatistik(*buku1, *siswa1);
 
-    cout << "\n===Setelah Pengembalian===" << endl;
-    buku1.tampilkanInfo();
-    siswa1.tampilkanInfo();
+    petugas1->prosesPengembalian(*buku1, *siswa1);
 
-    admin.ubahLevelAkses(petugas1, "Koordinator");
+    admin.ubahLevelAkses(*petugas1, "Koordinator");
+    
+    return 0;
 }
