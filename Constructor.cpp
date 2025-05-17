@@ -23,4 +23,10 @@ public:
         penulis = p;
         return *this;
     }
+
+    void tampilkanInfo() const
+    {
+        cout << "Judul: " << judul << ", Penulis: " << penulis << ", Status: ";
+        cout << (statusDipinjam ? "Dipinjam" : "Tersedia") << endl;
+    }
 };
