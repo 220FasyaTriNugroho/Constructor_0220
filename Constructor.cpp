@@ -121,3 +121,7 @@ public:
 
     friend class Admin;
 };
+
+class Admin{
+
+};
