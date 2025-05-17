@@ -39,4 +39,8 @@ private:
     string nama;
     int id;
     int totalDipinjam;
+
+public:
+    Peminjam(string n = "", int i = 0) : nama(n), id(i), totalDipinjam(0){}
+    
 };
