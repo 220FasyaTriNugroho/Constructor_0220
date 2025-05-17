@@ -136,3 +136,13 @@ public:
         lihatStatusPeminjam(p);
     }
 };
+
+//Friend Function
+void lihatStatusBuku(const Buku& b){
+    cout << "Admin: Status Buku: " << (b.statusDipinjam ? "Dipinjam" : "Tersedia") << endl;
+}
+
+
+void lihatStatusPeminjam(const Peminjam& p){
+    cout << "Admin: Total Buku Dipinjam oleh Peminjam: " << p.totalDipinjam << endl;
+}
