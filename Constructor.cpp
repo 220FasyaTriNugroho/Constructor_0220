@@ -43,4 +43,9 @@ private:
 public:
     Peminjam(string n = "", int i = 0) : nama(n), id(i), totalDipinjam(0){}
     
+    Peminjam& setNama(const string& n)
+    {
+        nama = n;
+        return *this;
+    }
 };
