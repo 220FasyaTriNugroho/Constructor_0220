@@ -18,7 +18,7 @@ class Mahasiswa{
             cout << endl;
         }
 
-        ~Mahasiswa(){
+        ~Mahasiswa(){ //"~" syarat destruktor
             cout << nama << " Dihancurkan " << endl;
             --totalMahasiswa;
             cout << endl;
@@ -26,6 +26,11 @@ class Mahasiswa{
 
         static int getSeluruhMahasiswa(){
             return totalMahasiswa;
+        }
+
+        static void setMahasiswaTotal(int a)
+        {
+            totalMahasiswa = a;
         }
 };
 
@@ -39,7 +44,8 @@ int main(){
 
     Mahasiswa st1("Maman", 40);
     Mahasiswa st2("Agus", 34);
-    
+
+    Mahasiswa::setMahasiswaTotal(100);
     cout << "Total Mahasiswa adalah = " << 
     Mahasiswa::getSeluruhMahasiswa() << endl;
     {
@@ -52,5 +58,6 @@ int main(){
 
     cout << "Total Mahasiswa adalah = " << 
     Mahasiswa::getSeluruhMahasiswa() << endl;
-    
+
+    return 0;    
 }
