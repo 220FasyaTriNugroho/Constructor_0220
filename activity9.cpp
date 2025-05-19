@@ -14,11 +14,11 @@ class Mahasiswa{
             umur = pUmur;
             status = "Mahasiswa Baru";
             ++totalMahasiswa;
-            cout << nama << " Dibuat " << endl;
+            cout << nama << " Dibuat " << " Status " << status << endl;
             cout << endl;
         }
 
-        Mahasiswa(){
+        ~Mahasiswa(){
             cout << nama << " Dihancurkan " << endl;
             --totalMahasiswa;
             cout << endl;
@@ -39,7 +39,18 @@ int main(){
 
     Mahasiswa st1("Maman", 40);
     Mahasiswa st2("Agus", 34);
-    Mahasiswa st3("Budi", 19);
-    Mahasiswa st4("Caca", 21);
+    
+    cout << "Total Mahasiswa adalah = " << 
+    Mahasiswa::getSeluruhMahasiswa() << endl;
+    {
+        Mahasiswa st3("Budi", 19);
+        Mahasiswa st4("Caca", 21);
+        cout << "Total Mahasiswa adalah = " << 
+        Mahasiswa::getSeluruhMahasiswa() << endl;
+    }
 
+
+    cout << "Total Mahasiswa adalah = " << 
+    Mahasiswa::getSeluruhMahasiswa() << endl;
+    
 }
