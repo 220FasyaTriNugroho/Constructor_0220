@@ -14,6 +14,13 @@ class Mahasiswa{
             umur = pUmur;
             status = "Mahasiswa Baru";
             ++totalMahasiswa;
+            cout << nama << " Dibuat " << endl;
+            cout << endl;
+        }
+
+        Mahasiswa(){
+            cout << nama << " Dihancurkan " << endl;
+            --totalMahasiswa;
         }
 };
 
