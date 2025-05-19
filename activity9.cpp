@@ -21,9 +21,25 @@ class Mahasiswa{
         Mahasiswa(){
             cout << nama << " Dihancurkan " << endl;
             --totalMahasiswa;
+            cout << endl;
+        }
+
+        static int getSeluruhMahasiswa(){
+            return totalMahasiswa;
         }
 };
 
+
+int Mahasiswa::totalMahasiswa = 0;
+
 int main(){
+
+    cout << "Total Mahasiswa adalah = " << 
+    Mahasiswa::getSeluruhMahasiswa() << endl;
+
+    Mahasiswa st1("Maman", 40);
+    Mahasiswa st2("Agus", 34);
+    Mahasiswa st3("Budi", 19);
+    Mahasiswa st4("Caca", 21);
 
 }
